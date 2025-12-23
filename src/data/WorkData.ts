@@ -6,7 +6,7 @@ export default [
     logoType: "image",
     logoColor: "transparent",
     position: "Software Developer Trainee",
-    duration: "Oct 2025 - Present",
+    duration: "Oct 2025 - Dec 2025",
     achievements: [
       "Planned, designed, and developed an early-stage cross-platform product for iOS, Android, and the web.",
       "Worked with a 3-person team using Flutter and Dart to deliver the initial feature set.",
@@ -19,7 +19,7 @@ export default [
     logoType: "image",
     logoColor: "transparent",
     position: "Front-End Developer",
-    duration: "Jul 2025 - Present",
+    duration: "Jul 2025 - Sep 2025",
     achievements: [
       "Work on freelance projects with flexible timing, consistently delivering high standards and meeting expectations.",
       "Currently developing a website for my barber, which includes a clean and inviting landing page to direct customers to book appointments.",

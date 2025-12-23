@@ -67,7 +67,7 @@ export default function Hero() {
             className="flex flex-wrap gap-2 pt-6 justify-center md:justify-start"
             variants={itemVariants}
           >
-            <a href="/resume.pdf" download>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <Button>
                 <Download className="w-4 h-4 mr-2" />
                 Resume
