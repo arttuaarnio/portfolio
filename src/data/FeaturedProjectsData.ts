@@ -13,7 +13,7 @@ export default [
       "Firebase",
       "OpenAI",
     ],
-    source: "https://github.com/Arttuaarnio/PoolPocket",
+    source: "https://github.com/arttuaarnio/PoolPocket",
     website: "",
   },
   {
@@ -22,7 +22,7 @@ export default [
     image: "/images/portfolio.png",
     link: "/projects/portfolio",
     tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    source: "https://github.com/Arttuaarnio/portfolio",
+    source: "https://github.com/arttuaarnio/portfolio",
   },
   {
     title: "MovieMania",
@@ -38,7 +38,7 @@ export default [
       "JWT",
       "TMDB API",
     ],
-    source: "https://github.com/Arttuaarnio/moviemania",
-    website: "https://movie-mania.live",
+    source: "https://github.com/arttuaarnio/moviemania",
+    website: "https://moviemania-weld.vercel.app/login",
   },
 ];

@@ -13,7 +13,7 @@ export default [
       "Firebase",
       "OpenAI",
     ],
-    source: "https://github.com/Arttuaarnio/PoolPocket",
+    source: "https://github.com/arttuaarnio/PoolPocket",
     website: "",
   },
   {
@@ -38,8 +38,8 @@ export default [
       "JWT",
       "TMDB API",
     ],
-    source: "https://github.com/Arttuaarnio/moviemania",
-    website: "https://movie-mania.live",
+    source: "https://github.com/arttuaarnio/moviemania",
+    website: "https://moviemania-weld.vercel.app",
   },
   {
     title: "Peg Solitaire Solver",
@@ -48,6 +48,6 @@ export default [
     image: "/images/pegsolitare.png",
     link: "/projects/pegsolitare",
     tech: ["Python", "Tkinter"],
-    source: "https://github.com/Arttuaarnio/peg-solitaire-solver",
+    source: "https://github.com/arttuaarnio/peg-solitaire-solver",
   },
 ];
