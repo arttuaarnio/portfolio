@@ -56,11 +56,10 @@ export default function Hero() {
           </h1>
 
           <h2 className="text-lg font-bold">
-            Full-stack developer from Helsinki, Finland 🇫🇮
+            Software developer from Helsinki, Finland 🇫🇮
           </h2>
           <p className="text-muted-foreground text-lg">
-            Enjoying the little things in life such as tech, good coffee, great
-            food, music and billiards.
+           I’m a developer who enjoys building things, exploring new technology, and turning ideas into useful experiences. Outside of code, you’ll find me enjoying good coffee, great food, music, and a game of billiards.
           </p>
 
           <motion.div

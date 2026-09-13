@@ -1,6 +1,20 @@
 export default [
   {
     id: 1,
+    company: "Haaga-Helia Customer Project",
+    logo: "/images/haaga-helia.jpg",
+    logoType: "image",
+    logoColor: "transparent",
+    position: "Full-Stack Developer",
+    duration: "Jan 2026 - May 2026",
+    achievements: [
+      "Worked in a 6-person Scrum team on a real customer project, translating Figma designs and requirements into a working mobile application with Finnish/English internationalization.",
+      "Developed a cross-platform mobile application using React Native, Expo, and TypeScript, implementing features such as authentication, onboarding, team management, session history, and settings.",
+      "Developed backend functionality with Deno, Hono, TypeScript, and Supabase, including REST API endpoints, authentication middleware, protected routes, and team/session management.",
+    ],
+  },
+  {
+    id: 2,
     company: "Sata Innovations Oy",
     logo: "/images/satainnovations.png",
     logoType: "image",
@@ -13,30 +27,15 @@ export default [
     ],
   },
   {
-    id: 2,
+    id: 3,
     company: "Freelance Developer",
     logo: "/images/freelance.png",
     logoType: "image",
     logoColor: "transparent",
     position: "Front-End Developer",
-    duration: "Jul 2025 - Sep 2025",
+    duration: "Jul 2025 - Present",
     achievements: [
-      "Work on freelance projects with flexible timing, consistently delivering high standards and meeting expectations.",
-      "Currently developing a website for my barber, which includes a clean and inviting landing page to direct customers to book appointments.",
-    ],
-  },
-  {
-    id: 3,
-    company: "Project Courses During My Studies at Haaga-Helia",
-    logo: "/images/haaga-helia.jpg",
-    logoType: "image",
-    logoColor: "transparent",
-    position: "Full-Stack Developer",
-    duration: "Aug 2024 - May 2025",
-    achievements: [
-      "Completed multiple project courses as part of my Bachelor's degree.",
-      "Collaborated with a teams of 5-6 students using Agile methodologies (Scrum) and participated in meetings, sprint planning and retrospectives to ensure project delivery.",
-      "Developed full-stack applications using technologies such as Java, Springboot, React, React-Native, Node.js, Firebase and OpenAI APIs.",
+      "Currently developing and maintaining a website for my barber, which includes a clean and inviting landing page to direct customers to book appointments.",
     ],
   },
 ];

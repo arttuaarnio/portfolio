@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import {
   Tooltip,
   TooltipContent,
@@ -7,83 +8,81 @@ import {
 } from "@/components/ui/tooltip";
 
 const technologies = [
-  // Core Web
-  {
-    name: "HTML5",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  },
-  {
-    name: "CSS3",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  },
+  // Languages
   {
     name: "JavaScript",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
     name: "TypeScript",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
-  // Frontend Frameworks
-  {
-    name: "React",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    name: "Next.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  },
-  // Backend & Databases
-  {
-    name: "Node.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg",
   },
   {
     name: "Python",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   },
+
+  // Frontend
   {
-    name: "Java",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    name: "React",
+    status: "working",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
+
+  // Backend & Database
   {
-    name: "Spring",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    name: "Node.js",
+    status: "working",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg",
   },
   {
     name: "PostgreSQL",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
   },
-  // DevOps & Cloud
+
+  // DevOps
   {
     name: "Docker",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
-  {
-    name: "Firebase",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-  },
-  {
-    name: "Heroku",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg",
-  },
-  // Tools
+
+  // Tools & Environment
   {
     name: "Git",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
   },
   {
-    name: "GitHub",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    name: "Terminal",
+    status: "working",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
   },
   {
-    name: "VS Code",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-  },
-  // OS
-  {
-    name: "MacOS",
+    name: "macOS",
+    status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
+  },
+
+  // Exploring
+  {
+    name: "Go",
+    status: "exploring",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+  },
+  {
+    name: "Kubernetes",
+    status: "exploring",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg",
+  },
+  {
+    name: "C",
+    status: "exploring",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
   },
 ];
 
@@ -126,12 +125,28 @@ export default function Technologies() {
         >
           Technologies
         </motion.h2>
+
         <motion.p
-          className="text-muted-foreground text-center md:text-left mb-8"
+          className="text-muted-foreground text-center md:text-left mb-4"
           variants={itemVariants}
         >
-          Here are some tools and technologies I've already worked with:
+          A selection of technologies I use regularly and am currently exploring.
         </motion.p>
+
+        <motion.div
+          className="flex justify-center md:justify-start items-center gap-4 mb-8 text-sm text-muted-foreground"
+          variants={itemVariants}
+        >
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-foreground/40" />
+            <span>Working with</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-primary" />
+            <span>Exploring</span>
+          </div>
+        </motion.div>
 
         <TooltipProvider>
           <motion.div
@@ -147,9 +162,16 @@ export default function Technologies() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <div
-                      className="p-3 rounded-md bg-muted hover:bg-muted/80 transition-all"
+                      className="relative p-3 rounded-md bg-muted hover:bg-muted/80 transition-all"
                       title={tech.name}
                     >
+                      {tech.status === "exploring" && (
+                        <span
+                          className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary"
+                          aria-label="Currently exploring"
+                        />
+                      )}
+
                       <img
                         src={tech.src}
                         alt={`${tech.name} logo`}
@@ -157,7 +179,11 @@ export default function Technologies() {
                       />
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent>{tech.name}</TooltipContent>
+
+                  <TooltipContent>
+                    {tech.name}
+                    {tech.status === "exploring" && " · Exploring"}
+                  </TooltipContent>
                 </Tooltip>
               </motion.div>
             ))}
