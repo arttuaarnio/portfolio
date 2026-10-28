@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useRef, useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 import data from "@/data/ProjectsData.ts";
 
@@ -30,8 +31,34 @@ const itemVariants = {
 };
 
 export default function Projects() {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [selected, setSelected] = useState<(typeof projectData)[number]>();
+
+  const open = (project: (typeof projectData)[number]) => {
+    setSelected(project);
+    dialogRef.current?.showModal();
+  };
+
   return (
     <>
+      <dialog
+        ref={dialogRef}
+        onClick={() => dialogRef.current?.close()}
+        className="m-auto w-[min(1200px,92vw)] cursor-zoom-out bg-transparent p-0 backdrop:bg-black/80 backdrop:backdrop-blur-sm open:animate-in open:fade-in open:zoom-in-95"
+      >
+        {selected && (
+          <figure>
+            <img
+              src={selected.image}
+              alt={selected.title}
+              className="w-full rounded-xl shadow-2xl"
+            />
+            <figcaption className="mt-3 text-center text-sm text-white/80">
+              {selected.title}
+            </figcaption>
+          </figure>
+        )}
+      </dialog>
       <motion.div
         className="flex max-w-3xl mx-auto px-4 py-8"
         variants={containerVariants}
@@ -47,11 +74,18 @@ export default function Projects() {
             <motion.div key={index} variants={itemVariants} custom={index}>
               <div className="max-w-3xl min-h-[450px] mx-auto relative p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg mb-2">
                 <div className="mb-4">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-contain rounded-lg"
-                  />
+                  <button
+                    type="button"
+                    onClick={() => open(project)}
+                    aria-label={`Enlarge ${project.title} image`}
+                    className="block w-full cursor-zoom-in rounded-lg transition-transform hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-contain rounded-lg"
+                    />
+                  </button>
                 </div>
 
                 <div>
