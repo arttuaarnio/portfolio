@@ -75,11 +75,6 @@ const technologies = [
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
   },
   {
-    name: "Kubernetes",
-    status: "exploring",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg",
-  },
-  {
     name: "C",
     status: "exploring",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
