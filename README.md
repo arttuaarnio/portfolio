@@ -1,6 +1,6 @@
 # My Personal Portfolio
 
-[www.arttuaarnio.tech](https://www.arttuaarnio.com)
+[www.arttuaarnio.com](https://www.arttuaarnio.com)
 
 A simple and responsive portfolio website built to showcase my projects and skills with a clean and modern UI.
 
