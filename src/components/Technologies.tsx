@@ -60,12 +60,13 @@ const technologies = [
   {
     name: "Terminal",
     status: "working",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+    src: "/icons/terminal.svg",
   },
   {
     name: "macOS",
     status: "working",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
+    invert: true,
   },
 
   // Exploring
@@ -115,7 +116,7 @@ export default function Technologies() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
-          className="text-2xl font-semibold mb-6 text-center md:text-left"
+          className="text-2xl font-semibold mb-6 text-center md:text-left text-ctp-mauve"
           variants={itemVariants}
         >
           Technologies
@@ -133,12 +134,12 @@ export default function Technologies() {
           variants={itemVariants}
         >
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-foreground/40" />
+            <span className="h-2 w-2 rounded-full bg-ctp-green" />
             <span>Working with</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-primary" />
+            <span className="h-2 w-2 rounded-full bg-ctp-peach" />
             <span>Exploring</span>
           </div>
         </motion.div>
@@ -160,24 +161,30 @@ export default function Technologies() {
                       className="relative p-3 rounded-md bg-muted hover:bg-muted/80 transition-all"
                       title={tech.name}
                     >
-                      {tech.status === "exploring" && (
-                        <span
-                          className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary"
-                          aria-label="Currently exploring"
-                        />
-                      )}
+                      <span
+                        className={`absolute top-1.5 right-1.5 h-2 w-2 rounded-full ${
+                          tech.status === "exploring"
+                            ? "bg-ctp-peach"
+                            : "bg-ctp-green"
+                        }`}
+                        aria-hidden="true"
+                      />
 
                       <img
                         src={tech.src}
                         alt={`${tech.name} logo`}
-                        className="h-10 w-auto object-contain"
+                        className={`h-10 w-auto object-contain ${
+                          "invert" in tech ? "invert opacity-85" : ""
+                        }`}
                       />
                     </div>
                   </TooltipTrigger>
 
                   <TooltipContent>
                     {tech.name}
-                    {tech.status === "exploring" && " · Exploring"}
+                    {tech.status === "exploring"
+                      ? " · Exploring"
+                      : " · Working with"}
                   </TooltipContent>
                 </Tooltip>
               </motion.div>

@@ -51,15 +51,16 @@ export default function Hero() {
           className="flex-1 text-center md:text-left space-y-4"
           variants={simultaneousVariants}
         >
-          <h1 className="text-5xl font-bold leading-tight">
+          <h1 className="text-[2rem] sm:text-[2.75rem] font-bold leading-tight tracking-tight">
             Hi, I'm Arttu. <span className="inline-block">👋</span>
+            <span className="prompt-cursor hidden sm:inline-block" aria-hidden="true" />
           </h1>
 
-          <h2 className="text-lg font-bold">
+          <h2 className="text-base font-bold text-ctp-blue">
             Software developer from Helsinki, Finland 🇫🇮
           </h2>
           <p className="text-muted-foreground text-lg">
-           I’m a developer who enjoys building things, exploring new technology, and turning ideas into useful experiences. Outside of code, you’ll find me enjoying good coffee, great food, music, and a game of billiards.
+           Curious by default. I build apps, games and terminal tools, mostly because I want them to exist. Off the keyboard: coffee, good food, music and billiards.
           </p>
 
           <motion.div

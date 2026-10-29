@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -22,9 +21,19 @@ const Navbar = () => {
           </Button>
         </nav>
 
-        <div className="w-[250px] flex justify-end cursor-pointer">
-          <ThemeToggle />
-        </div>
+        <span
+          aria-hidden="true"
+          className="whitespace-nowrap text-xs sm:text-sm text-muted-foreground"
+        >
+          <span className="text-[#a6da95]">
+            arttu
+            {/* the full prompt doesn't fit next to the nav on small phones */}
+            <span className="hidden min-[400px]:inline">@helsinki</span>
+          </span>{" "}
+          <span className="text-[#8aadf4]">
+            ~{location.pathname === "/" ? "" : location.pathname}
+          </span>
+        </span>
       </div>
     </header>
   );

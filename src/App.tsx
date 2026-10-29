@@ -7,9 +7,8 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollToTop from "./components/ScrollToTop";
-import ParticleBackground from "./components/ParticleBackground";
+import TerminalBackground from "./components/TerminalBackground";
 import Home from "./pages/HomePage";
 import Projects from "./pages/ProjectsPage";
 
@@ -24,8 +23,8 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
-      <div className="fixed inset-0 bg-background -z-20" />
-      <ParticleBackground />
+      <div className="terminal-bg fixed inset-0 -z-20" />
+      <TerminalBackground />
       <Navbar />
       <main className="pt-20 relative">
         <AnimatePresence mode="wait">
@@ -41,11 +40,9 @@ function AppContent() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-      <Router>
-        <AppContent />
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

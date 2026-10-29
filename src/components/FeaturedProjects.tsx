@@ -48,7 +48,9 @@ export default function Projects() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div className="flex" variants={itemVariants}>
-          <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-6 text-ctp-mauve">
+            Featured Projects
+          </h2>
           <Button asChild className="ml-auto">
             <Link to="/projects">View more</Link>
           </Button>
@@ -63,7 +65,7 @@ export default function Projects() {
         <motion.div variants={itemVariants}>
           <Carousel
             opts={{ align: "start" }}
-            className="max-w-3xl mx-auto relative p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg"
+            className="max-w-3xl mx-auto relative p-6 rounded-xl bg-card/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg"
           >
             <CarouselContent className="">
               {projectData.map((project, index) => (
@@ -104,7 +106,11 @@ export default function Projects() {
                             rel="noreferrer"
                             className="text-muted-foreground flex items-center gap-1"
                           >
-                            <Button variant="ghost" size="sm">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="text-ctp-blue hover:bg-ctp-blue/10 dark:hover:bg-ctp-blue/10 hover:text-ctp-blue"
+                            >
                               <Github className="w-6 h-6" />
                               Source
                             </Button>
@@ -117,7 +123,11 @@ export default function Projects() {
                             rel="noreferrer"
                             className="text-muted-foreground flex items-center gap-1"
                           >
-                            <Button variant="ghost" size="sm">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="text-ctp-green hover:bg-ctp-green/10 dark:hover:bg-ctp-green/10 hover:text-ctp-green"
+                            >
                               <ExternalLink className="w-6 h-6" />
                               Website
                             </Button>

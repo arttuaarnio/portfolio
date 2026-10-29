@@ -72,7 +72,7 @@ export default function Projects() {
         >
           {projectData.map((project, index) => (
             <motion.div key={index} variants={itemVariants} custom={index}>
-              <div className="max-w-3xl min-h-[450px] mx-auto relative p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg mb-2">
+              <div className="max-w-3xl min-h-[450px] mx-auto relative p-6 rounded-xl bg-card/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg mb-2">
                 <div className="mb-4">
                   <button
                     type="button"
@@ -112,7 +112,11 @@ export default function Projects() {
                         rel="noreferrer"
                         className="text-muted-foreground flex items-center gap-1"
                       >
-                        <Button variant="ghost" size="sm">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-ctp-blue hover:bg-ctp-blue/10 dark:hover:bg-ctp-blue/10 hover:text-ctp-blue"
+                        >
                           <Github className="w-6 h-6" />
                           Source
                         </Button>
@@ -125,7 +129,11 @@ export default function Projects() {
                         rel="noreferrer"
                         className="text-muted-foreground flex items-center gap-1"
                       >
-                        <Button variant="ghost" size="sm">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-ctp-green hover:bg-ctp-green/10 dark:hover:bg-ctp-green/10 hover:text-ctp-green"
+                        >
                           <ExternalLink className="w-6 h-6" />
                           Website
                         </Button>
