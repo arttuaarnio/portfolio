@@ -5,11 +5,52 @@ export default [
     logo: "/images/haaga-helia.jpg",
     logoType: "image",
     logoColor: "transparent",
-    position: "Bachelor's Degree of Business Information Technology",
-    duration: "Aug 2023 - December 2026",
+    position:
+      "Bachelor of Business Administration in Information Technology, Software Development",
+    duration: "Aug 2023 - Dec 2026",
     achievements: [
-      "GPA: 4.36/5.0",
-      "Relevant coursework: Programming 1 & 2, Back-end Development, Front-end Development, Python Programming, Mobile Programming, Databases and Data Management, Software Development Technologies, Software Requirements Analysis, DevOps and more.",
+      "GPA 4.31 / 5, 199 ECTS credits completed",
+      "All required courses done, thesis in progress",
+    ],
+    coursework: [
+      {
+        group: "Programming",
+        courses: [
+          "Programming 1",
+          "Programming 2",
+          "Python Programming",
+          "TypeScript Programming",
+          "Front-end Programming",
+          "Back-end Programming",
+          "Mobile Programming",
+        ],
+      },
+      {
+        group: "Data and infrastructure",
+        courses: [
+          "Databases and Data Management",
+          "Data Analytics with Python",
+          "DevOps Technologies",
+          "Git Version Control",
+          "ICT Infrastructure and Cloud Services",
+        ],
+      },
+      {
+        group: "Software engineering",
+        courses: [
+          "Software Testing",
+          "Requirements Engineering",
+          "Current Software Development Technologies",
+        ],
+      },
+      {
+        group: "Projects",
+        courses: [
+          "Software Project 1",
+          "Software Project 2",
+          "Softala Software Development Project",
+        ],
+      },
     ],
   },
   {

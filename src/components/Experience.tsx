@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import EducationData from "@/data/EducationData.ts";
 import WorkData from "@/data/WorkData.ts";
 
@@ -65,6 +66,14 @@ export default function Experience() {
   );
 }
 
+// One accent per coursework group, so the groups read apart at a glance
+const groupColors = [
+  "text-ctp-blue",
+  "text-ctp-teal",
+  "text-ctp-peach",
+  "text-ctp-pink",
+];
+
 function ExperienceList({ data }: { data: any[] }) {
   return (
     <motion.div
@@ -77,7 +86,7 @@ function ExperienceList({ data }: { data: any[] }) {
       {data.map((item, index) => (
         <motion.div
           key={item.id ?? index}
-          className="flex gap-4 p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg"
+          className="flex gap-4 p-6 rounded-xl bg-card/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg"
           variants={itemVariants}
           custom={index}
         >
@@ -101,24 +110,24 @@ function ExperienceList({ data }: { data: any[] }) {
             )}
           </div>
 
-          <div className="flex-1">
-            <div className="flex items-start justify-between mb-2">
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
               <h3 className="text-lg font-semibold">
                 {item.company ?? "Company"}
               </h3>
-              <span className="text-sm text-muted-foreground ml-4 ">
+              <span className="text-sm text-ctp-peach sm:ml-4 whitespace-nowrap">
                 {item.duration ?? ""}
               </span>
             </div>
 
-            <p className="text-muted-foreground mb-4">{item.position ?? ""}</p>
+            <p className="text-ctp-blue mb-4">{item.position ?? ""}</p>
 
             {Array.isArray(item.achievements) &&
               item.achievements.length > 0 && (
                 <ul className="space-y-3">
                   {item.achievements.map((achievement: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <span className="text-white-500 text-l">•</span>
+                      <span className="text-ctp-teal">•</span>
                       <span className="text-sm text-muted-foreground leading-relaxed">
                         {achievement}
                       </span>
@@ -126,6 +135,31 @@ function ExperienceList({ data }: { data: any[] }) {
                   ))}
                 </ul>
               )}
+
+            {Array.isArray(item.coursework) && (
+              <div className="mt-5 space-y-4">
+                <h4 className="text-sm font-semibold text-ctp-mauve">Relevant coursework</h4>
+                {item.coursework.map(
+                  (
+                    { group, courses }: { group: string; courses: string[] },
+                    i: number,
+                  ) => (
+                    <div key={group}>
+                      <p className={`text-xs mb-2 ${groupColors[i % groupColors.length]}`}>
+                        {group}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {courses.map((course) => (
+                          <Badge key={course} variant="outline" className="whitespace-normal">
+                            {course}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  ),
+                )}
+              </div>
+            )}
           </div>
         </motion.div>
       ))}
